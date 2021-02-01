@@ -9,8 +9,10 @@
     "body-parser": "^1.19.0",
     "bootstrap": "^4.5.3",
     "commonjs": "^0.0.1",
+    "cors": "^2.8.5",
     "ejs": "^2.7.4",
     "express": "^4.17.1",
+    "express-react-views": "^0.11.0",
     "mysql": "^2.18.1",
     "node-fetch": "^2.6.1",
     "react": "^17.0.1",
@@ -44,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }

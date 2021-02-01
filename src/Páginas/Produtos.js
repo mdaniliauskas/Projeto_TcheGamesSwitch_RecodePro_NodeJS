@@ -9,7 +9,7 @@ export default function Produtos() {
     const [ produtos, setProdutos ] = useState([]);
 
     useEffect(async () => {
-        const resposta = await fetch("http://localhost/tchegames_React/src/php/produtos.php");
+        const resposta = await fetch("http://localhost:3001/selecttodos");
         const dados = await resposta.json();
         setProdutos(dados);  
               

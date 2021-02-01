@@ -5,11 +5,6 @@ import Rotas from './rotas';
 import { BrowserRouter } from 'react-router-dom';
 import { Container, Navbar } from 'react-bootstrap';
 
-const express = require('express');
-const conexao = require('./bancodados/conexao');
-
-
-
 function App() {
   return (
     <BrowserRouter>
