@@ -15,33 +15,29 @@ app.get('/selecttodos', (req, res) => {
     conexao.query("SELECT * FROM produtos;", (error, result) => {
         res.json(result);  
     })
-})
+});
 
 
 app.get('/selectconsoles', (req, res) => {
     conexao.query("SELECT * FROM produtos where categoria='consoles';", (error, result) => {
         res.json(result);  
     })
-})
+});
 
 app.get('/selectjogos', (req, res) => {
     conexao.query("SELECT * FROM produtos where categoria='jogos';", (error, result) => {
         res.json(result);  
     })
-})
+});
 
 app.get('/selectacessorios', (req, res) => {
     conexao.query("SELECT * FROM produtos where categoria='acessorios';", (error, result) => {
         res.json(result);  
     })
-})
+});
 
 
-app.get('/selectacessorios', (req, res) => {
-    conexao.query("SELECT * FROM produtos where categoria='acessorios';", (error, result) => {
-        res.json(result);  
-    })
-})
+
 
 app.post("/insertpedido",(req,res) => {
     let pedido = []
@@ -57,7 +53,13 @@ app.post("/insertpedido",(req,res) => {
     conexao.query('INSERT INTO pedidos SET ?', pedido, () =>{ 
       
     })
-  })
+  });
+
+  app.get("/selectcontrole", (req,res) => {
+    conexao.query("SELECT * FROM pedidos INNER JOIN produtos on pedidos.produto_id = produtos.idprodutos;",(error,result) => {
+      res.json(result)
+    })
+  });
 
 
 
