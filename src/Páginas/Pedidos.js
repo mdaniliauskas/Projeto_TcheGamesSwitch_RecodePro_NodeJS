@@ -26,9 +26,12 @@ export default function Pedidos(props) {
     const Envio = async (evento) => {
              
         // eslint-disable-next-line no-unused-vars
-        const resultado = await fetch("http://localhost:3001/insertpedido", { method: "POST", body: new FormData(evento.target) });
-        const dados = await resultado.json();
-        setForm(dados)        
+        // const resultado = await fetch("http://localhost:3001/insertpedido", { method: "POST", body: new FormData(evento.target) });
+        // const dados = await resultado.json();
+        // setForm(dados) 
+        
+        const resultado = await fetch("http://localhost:3001/insertpedido", {method: "POST", headers: {"Content-Type": "application/json",},body:JSON.stringify(form)});
+        
         alert("Pedido enviado com sucesso!")
     };   
     
