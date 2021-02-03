@@ -1,8 +1,5 @@
 import {useState} from 'react';
 import { Form, Button } from "react-bootstrap";
-const fetch = require('node-fetch');
-
-
 
 
 export default function Pedidos(props) {

@@ -3,7 +3,6 @@ const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const conexao = require('./bancodados/conexao');
-const fetch = require('node-fetch');
 
 app.use(cors({origin: 'http://localhost:3000'}));
 
