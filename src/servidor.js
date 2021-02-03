@@ -2,14 +2,13 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const conexao = require('./bancodados/conexao')
+const conexao = require('./bancodados/conexao');
+const fetch = require('node-fetch');
 
 app.use(cors({origin: 'http://localhost:3000'}));
 
 app.use(bodyParser.urlencoded({ extend: true}));
 app.use(express.json());
-
-
 
 
 app.get('/selecttodos', (req, res) => {
@@ -38,12 +37,29 @@ app.get('/selectacessorios', (req, res) => {
 })
 
 
-
 app.get('/selectacessorios', (req, res) => {
     conexao.query("SELECT * FROM produtos where categoria='acessorios';", (error, result) => {
         res.json(result);  
     })
 })
+
+app.post("/insertpedido",(req,res) => {
+    let pedido = []
+    
+    pedido.push({
+        nomeClientes: req.body.nomeClientes,
+        email: req.body.email,
+        telefone: req.body.telefone,
+        endereco: req.body.endereco,
+        produto_id: req.body.produto_id,
+        quantidade: req.body.quantidade
+    })
+    conexao.query('INSERT INTO pedidos SET ?', pedido, () =>{ 
+      
+    })
+  })
+
+
 
 
 

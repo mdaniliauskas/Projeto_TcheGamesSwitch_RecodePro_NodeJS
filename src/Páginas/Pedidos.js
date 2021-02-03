@@ -1,5 +1,8 @@
 import {useState} from 'react';
 import { Form, Button } from "react-bootstrap";
+const fetch = require('node-fetch');
+
+
 
 
 export default function Pedidos(props) {
@@ -23,7 +26,9 @@ export default function Pedidos(props) {
     const Envio = async (evento) => {
              
         // eslint-disable-next-line no-unused-vars
-        const resultado = fetch("http://localhost/tchegames_React/src/php/pedidos.php", { method: "POST", body: new FormData(evento.target) });
+        const resultado = await fetch("http://localhost:3001/insertpedido", { method: "POST", body: new FormData(evento.target) });
+        const dados = await resultado.json();
+        setForm(dados)        
         alert("Pedido enviado com sucesso!")
     };   
     
