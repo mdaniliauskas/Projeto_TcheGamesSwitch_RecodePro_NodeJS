@@ -15,5 +15,5 @@ Os objetivos nesse projeto foram:
 * Realizar o clone deste projeto;
 * Instalar as dependências na pasta raíz com o comando: npm install;
 * Instalar o banco de dados (script na pasta /src/bancodados/tchegames0102;
-* Executar o servidor Node JS contido na pasta src/servidor.js;
+* Executar o servidor Node JS contido na pasta src/ com o commando nodemon servidor.js;
 * Executar o projeto React JS na pasta /src com o comando npm start;
